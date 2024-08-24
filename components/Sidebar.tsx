@@ -6,7 +6,7 @@ import { Button } from "./ui/button"
 const Sidebar = () => {
     const hashing = ["md5","sha1","sha-256","keccak256"]
     const crypotgraphy = ["caesar"]
-    const encodings = ["hex","base32","base64","base58"]
+    const encodings = ["hex","base32","base64"]
     const [page,setPage] = useRecoilState(pageState)
   return (
     <aside className="w-[25%] min-h-screen border">

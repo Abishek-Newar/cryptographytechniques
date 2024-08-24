@@ -16,6 +16,7 @@ import { sha1 } from "js-sha1";
 import { sha256 } from "js-sha256";
 import { Base64 } from "js-base64";
 import keccak256 from "keccak256";
+import { Textarea } from "./ui/textarea";
 
 const Hashing = () => {
     const [output, setOutput] = useState("output here");
@@ -61,9 +62,9 @@ const Hashing = () => {
 
     }
     return (
-        <div className="w-full">
-            <h1 className="uppercase text-center text-3xl font-bold">{page}</h1>
-            <div className="grid grid-cols-2 w-full ">
+        <div className="p-10">
+            <h1 className="uppercase text-center text-3xl font-bold mb-10">{page}</h1>
+            <div className="grid grid-cols-2 ">
             
             <div className="w-[17rem] p-6 flex flex-col gap-3">
                 <Button onClick={MD5} className="w-full">Hash</Button>
@@ -77,10 +78,10 @@ const Hashing = () => {
                     </SelectContent>
                 </Select>
             </div>
-            <div>
-                <Input onChange={(e) => setInput(e.target.value)} />
-                <div className="border h-56 p-10">
-                    <h1 className="w-32">{output}</h1>
+            <div className="w-full flex flex-col gap-3">
+                <Textarea onChange={(e) => setInput(e.target.value)} placeholder="Enter text to hash/encrypt/encode" />
+                <div className="border h-56 p-4">
+                    <h1 className="overflow-x-auto w-[600px]">{output}</h1>
                 </div>
             </div>
         </div>

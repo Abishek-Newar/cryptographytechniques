@@ -12,7 +12,7 @@ const Pages = () => {
     <div className='w-full'>
         {(page === "md5" || page === "sha1" || page === "sha-256" || page==="keccak256") && <Hashing />}
         {(page === "caesar") && <Cryptography />}
-        {(page === "hex" || page === "base32" || page === "base64" || page === "base58") && <Encoding />}
+        {(page === "hex" || page === "base32" || page === "base64" ) && <Encoding />}
     </div>
   )
 }
