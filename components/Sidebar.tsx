@@ -2,6 +2,7 @@
 import { useRecoilState } from "recoil"
 import { pageState } from "./Provider"
 import { Button } from "./ui/button"
+import { Icons } from "./ui/icons"
 
 const Sidebar = () => {
     const hashing = ["md5","sha1","sha-256","keccak256"]
@@ -23,7 +24,7 @@ function Container({text,array}: {text:string,array: string[]}){
     <h1 className="text-center text-blue-400">{text}</h1>
     {
         array.map((item,index)=>(
-            <Button onClick={()=>setPage(item)} key={index} className="uppercase" variant="ghost">{item}</Button>
+            <Button onClick={()=>setPage(item)} key={index} className="uppercase" variant="ghost"><Icons.home className="w-3 h-3"/>{item}</Button>
         ))
     }
 </div>
